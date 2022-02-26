@@ -13,7 +13,7 @@ export const DrfApiFetch = () => {
     const url = 'http://127.0.0.1:8000/api/tasks/'
     axios.get(url, {
       headers: {
-        'Authorization': 'Token 35fc63f58c3b12819eb6537fd7ca6223dfdb0076'
+        'Authorization': 'Token {token}'
       }
     })
       .then((res) => { setTasks(res.data) })
@@ -21,8 +21,8 @@ export const DrfApiFetch = () => {
     // tokenを取得するためにusernameとpasswordをpostにて送信。
     const url1 = 'http://127.0.0.1:8000/auth/'
     const data = {
-      "username": 'rei',
-      "password": 'rei'
+      "username": 'username',
+      "password": 'password'
     }
     axios.post(url1, data, {
       headers: {
@@ -37,7 +37,7 @@ export const DrfApiFetch = () => {
     axios.get(url, {
       headers: {
         'Authorization': `Token ${token}`
-        // 'Authorization': 'Token 35fc63f58c3b12819eb6537fd7ca6223dfdb0076'
+        // 'Authorization': 'Token {token}'
       }
     })
 
@@ -49,7 +49,7 @@ export const DrfApiFetch = () => {
     const url = `http://127.0.0.1:8000/api/tasks/${id}`
     axios.get(url, {
       headers: {
-        'Authorization': 'Token 35fc63f58c3b12819eb6537fd7ca6223dfdb0076'
+        'Authorization': 'Token {token}'
       }
     })
 
@@ -60,7 +60,7 @@ export const DrfApiFetch = () => {
     const url = `http://127.0.0.1:8000/api/tasks/${id}/`
     axios.delete(url, {
       headers: {
-        'Authorization': 'Token 35fc63f58c3b12819eb6537fd7ca6223dfdb0076'
+        'Authorization': 'Token {token}'
       }
     })
 
@@ -80,7 +80,7 @@ export const DrfApiFetch = () => {
     axios.post(url, data, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Token 35fc63f58c3b12819eb6537fd7ca6223dfdb0076'
+        'Authorization': 'Token {token}'
       }
     })
 
@@ -100,7 +100,7 @@ export const DrfApiFetch = () => {
     axios.put(url, task, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Token 35fc63f58c3b12819eb6537fd7ca6223dfdb0076'
+        'Authorization': 'Token {token}'
       }
     })
       .then((res) => {
